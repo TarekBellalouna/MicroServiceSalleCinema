@@ -1,11 +1,15 @@
 package tn.esprit.spring.Entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.AccessLevel;
 import lombok.Data;
@@ -28,35 +32,76 @@ public class SalleCinema implements Serializable {
 	
     String Nom;
     String Lieu;
-    String idCentre ;
+    
+    @ManyToOne()
+    CentreCinema centre ;
+	
+    @OneToMany(cascade = CascadeType.ALL)
+    List<Siege> Sieges ;
+
+	public SalleCinema(Long idSalle, String nom, String lieu, CentreCinema centre, List<Siege> sieges) {
+		super();
+		this.idSalle = idSalle;
+		Nom = nom;
+		Lieu = lieu;
+		this.centre = centre;
+		Sieges = sieges;
+	}
+
+	public SalleCinema() {
+		super();
+	}
+
 	public Long getIdSalle() {
 		return idSalle;
 	}
+
 	public void setIdSalle(Long idSalle) {
 		this.idSalle = idSalle;
 	}
+
 	public String getNom() {
 		return Nom;
 	}
+
 	public void setNom(String nom) {
 		Nom = nom;
 	}
+
 	public String getLieu() {
 		return Lieu;
 	}
+
 	public void setLieu(String lieu) {
 		Lieu = lieu;
 	}
-	public String getIdCentre() {
-		return idCentre;
+
+	public CentreCinema getCentre() {
+		return centre;
 	}
-	public void setIdCentre(String idCentre) {
-		this.idCentre = idCentre;
+
+	public void setCentre(CentreCinema centre) {
+		this.centre = centre;
 	}
+
+	public List<Siege> getSieges() {
+		return Sieges;
+	}
+
+	public void setSieges(List<Siege> sieges) {
+		Sieges = sieges;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public String toString() {
-		return "SalleCinema [idSalle=" + idSalle + ", Nom=" + Nom + ", Lieu=" + Lieu + ", idCentre=" + idCentre + "]";
+		return "SalleCinema [idSalle=" + idSalle + ", Nom=" + Nom + ", Lieu=" + Lieu + ", centre=" + centre
+				+ ", Sieges=" + Sieges + "]";
 	}
+    
 
 
 

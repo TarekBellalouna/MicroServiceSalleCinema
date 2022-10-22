@@ -1,0 +1,4 @@
+FROM java:8
+EXPOSE 8083
+ADD /target/SalleCinema-EurekaClient.jar SalleCinema-EurekaClient.jar
+ENTRYPOINT ["java", "-jar", "/SalleCinema-EurekaClient.jar"]

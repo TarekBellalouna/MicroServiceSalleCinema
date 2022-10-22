@@ -1,6 +1,8 @@
-package tn.esprit.spring.Entity;
+package tn.esprit.spring.Service;
 
 import java.util.List;
+
+import tn.esprit.spring.Entity.SalleCinema;
 
 
 
@@ -10,4 +12,5 @@ public interface ISalleCinemaService {
     void delete(long id);
     List<SalleCinema> findAll();
     SalleCinema findById(Long id);
+    void assignSalleToCentre(Long idSalle, Long idCentre);
 }
