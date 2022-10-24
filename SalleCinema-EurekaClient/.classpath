@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="SalleCinema-EurekaClient/src/main/java"/>
+	<classpathentry kind="src" path="SalleCinema-EurekaClient/src/test/java"/>
+	<classpathentry kind="lib" path="SalleCinema-EurekaClient/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="SalleCinema-EurekaClient/target/SalleCinema-EurekaClient-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="SalleCinema-EurekaClient/target/classes"/>
+</classpath>
